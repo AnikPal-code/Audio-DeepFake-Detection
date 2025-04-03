@@ -1,0 +1,7 @@
+numpy
+scipy
+librosa
+tensorflow
+pytorch
+flask
+python == 3.10.0
