@@ -1,3 +1,7 @@
+# Documentation
+
+[🔗 Download the User Guide (PDF)]([Momenta - Audio Deepfake Detection.pdf](https://github.com/AnikPal-code/Audio-DeepFake-Detection/blob/main/Momenta%20-%20Audio%20Deepfake%20Detection.pdf))
+
 # Audio DeepFake Detection
 
 This project is an **Audio DeepFake Detection** system built using **React (Frontend)** and **Flask (Backend)** with a deep learning model to classify audio files as real or fake.
