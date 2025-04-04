@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Audio DeepFake Detection
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an **Audio DeepFake Detection** system built using **React (Frontend)** and **Flask (Backend)** with a deep learning model to classify audio files as real or fake.
 
-## Available Scripts
+## Features
+- Supports **MP3, WAV, and MP4 audio files**.
+- Uses a **pretrained deep learning model** to analyze audio.
+- Deployable via **Netlify (Frontend)** and **Flask API (Backend)**.
+- Provides real-time classification results.
 
-In the project directory, you can run:
+## Demo: Click or copy paste this link below:
+https://anikpal-audio-deepfake-detection.netlify.app/
 
-### `npm start`
+---
+## Installation & Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/AnikPal-code/Audio-DeepFake-Detection.git
+cd Audio-DeepFake-Detection
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2️⃣ Backend (Flask API) Setup
 
-### `npm test`
+#### Install Dependencies
+```bash
+cd backend
+pip install -r requirements.txt
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Run Flask Server
+```bash
+python app.py
+```
+> The Flask server will start at `http://127.0.0.1:5000/`
 
-### `npm run build`
+### 3️⃣ Frontend (React) Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Install Dependencies
+```bash
+cd frontend
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Start Development Server
+```bash
+npm start
+```
+> The React frontend will be available at `http://localhost:3000/`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
+## Deployment
 
-### `npm run eject`
+### 🔥 Deploy Flask Backend (Python)
+1. Use **Render** or **Heroku** to host the Flask API.
+2. Update `frontend/src/config.js` with the hosted backend URL.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🚀 Deploy React Frontend (Netlify)
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+2. Deploy the `build/` folder to **Netlify** or **Vercel**.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
+## API Endpoints
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 🔹 Upload & Predict Audio
+**Endpoint:** `/predict`  
+**Method:** `POST`
+```json
+{
+  "file": "audio.mp3"
+}
+```
+**Response:**
+```json
+{
+  "result": "The audio is Fake."
+}
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
+## Troubleshooting
 
-## Learn More
+### 🛠 CORS Issues on Netlify Deployment
+- Ensure backend has `CORS(app)` enabled.
+- Use the correct **backend URL** in frontend requests.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🔥 Upload Button Not Working on Netlify
+- Check browser console for errors.
+- Make sure **backend API URL is correctly set** in frontend.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+## Contributing
+Feel free to submit issues or pull requests for improvements! 🎯
 
-### Code Splitting
+## License
+This project is **MIT Licensed**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
